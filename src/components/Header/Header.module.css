@@ -1,0 +1,13 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--text);
+}
+
+.Logo {
+    padding: 0.5em 1em;
+    border-right: 1px solid var(--text);
+}
+    .Logo img {
+        height: 5em;
+    }
