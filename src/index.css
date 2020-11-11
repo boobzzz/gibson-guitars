@@ -1,9 +1,11 @@
 body {
-  --red: #ce3f24;
-  --green: #4d91a6;
-  --text: #e4e4e4;
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    --red: #ce3f24;
+    --green: #1ABC9C;
+    --grey: #60769a;
+    --bg: #f2f2f2;
+    --text: #212529;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

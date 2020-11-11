@@ -1,12 +1,21 @@
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: rgba(0,0,0,.1275) 0 0.25rem 0.25rem;
+    background: white;
+    z-index: 100;
+}
+
+.Wrapper {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid var(--text);
+    max-width: 1200px;
+    margin: auto;
 }
 
 .Logo {
     padding: 0.5em 1em;
-    border-right: 1px solid var(--text);
 }
     .Logo img {
         height: 5em;
