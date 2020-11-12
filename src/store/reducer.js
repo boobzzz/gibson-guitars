@@ -1,5 +1,6 @@
 const initialState = {
-    products: []
+    products: [],
+    pinned: {}
 }
 
 export const productsReducer = (state = initialState, action) => {
@@ -9,9 +10,22 @@ export const productsReducer = (state = initialState, action) => {
         case 'GET_PRODUCTS':
             return {
                 ...state,
-                products: payload
+                products: payload.map(item =>
+                    ({...item, pinned: false})
+                )
             }
-    
+        case 'PIN_ITEM':
+            return {
+                ...state,
+                pinned: payload
+            }
+        case 'REMOVE_ITEM':
+            return {
+                ...state,
+                products: state.products.filter(item =>
+                    item !== payload
+                )
+            }
         default:
             return state
     }

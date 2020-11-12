@@ -2,12 +2,15 @@
     perspective: 1000px;
     cursor: pointer;
 }
+.Open {
+    position: relative;
+    z-index: 1;
+}
 
 .Inner {
     height: 300px;
-    border-radius: 5px;
-    transition: transform 0.5s;
     transform-style: preserve-3d;
+    transition: transform 0.5s;
 }
 .Flipped {
     transform: rotateY(180deg);
@@ -18,6 +21,7 @@
 
 .Front,
 .Back {
+    border-radius: 4px;
     backface-visibility: hidden;
 }
 .Front {
@@ -28,28 +32,43 @@
     color: var(--text);
     overflow: hidden;
 }
-    .Front img {
-        position: absolute;
-        top: 0; left: 1.5em;
-        width: 85%; height: 100%;
-        object-fit: contain;
-        transform: rotate(-25deg);
-    }
-    .Front > div + div {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-    }
-    .Front h4 {
-        color: var(--grey);
-    }
-    .Front span {
-        align-self: flex-end;
-        font-weight: 600;
-        color: var(--green);
-    }
+.Front img {
+    position: absolute;
+    top: 0; left: 2.5em;
+    width: 80%; height: 100%;
+    object-fit: contain;
+    transform: rotate(-25deg);
+}
+.Front > div + div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    letter-spacing: -1px;
+}
+.Front span {
+    align-self: flex-end;
+    color: var(--green);
+}
+.FrontHeader {
+    display: flex;
+    justify-content: space-between;
+}
+.Icons {
+    display: flex;
+}
+.Icons span {
+    align-self: flex-start;
+    margin-left: 0.5em;
+    font-size: 1.2em;
+    color: var(--grey);
+    transition: all 0.3s ease;
+}
+.Icons span:hover {
+    color: var(--green);
+}
+
 .Back {
     position: absolute;
     top: 0; left: 0;
@@ -60,26 +79,28 @@
     padding: 2em;
     background: white;
 }
-    .Back h4 {
-        color: var(--grey);
-    }
-    .Back div {
-        margin-top: 1em;
-        overflow: hidden;
-    }
     .Back button {
         align-self: flex-end;
-        padding-top: 1em;
+        padding: 1em 0 0 0;
         font-size: 1em;
         border: none;
         background: none;
-        color: var(--green);
+        color: var(--grey);
         outline: none;
+        transition: all 0.3s ease;
     }
-.Show {
-    height: max-content;
+    .Back button:hover {
+        color: var(--green);
+    }
+.BackHeader h4 {
+    color: var(--grey);
 }
-.Active {
-    position: relative;
-    z-index: 1;
+.BackDesc {
+    margin-top: 1em;
+    overflow: hidden;
+}
+
+.Show {
+    min-height: 300px;
+    height: max-content;
 }
