@@ -1,0 +1,15 @@
+.Button {
+    position: absolute;
+    top: 0.5em; right: 0.5em;
+    font-size: 2em;
+    border: none;
+    background: none;
+    color: var(--grey);
+    transition: all 0.3s ease;
+}
+.Button:hover {
+    color: var(--green);
+}
+.Button:focus {
+    outline: none;
+}

@@ -26,6 +26,12 @@ export const productsReducer = (state = initialState, action) => {
                     item !== payload
                 )
             }
+        case 'ADD_ITEM':
+            // console.log(payload)
+            return {
+                ...state,
+                products: [...state.products, payload]
+            }
         default:
             return state
     }

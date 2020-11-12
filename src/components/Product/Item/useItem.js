@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import classes from './ProductItem.module.css';
+import classes from './Item.module.css';
 
 export const useItem = () => {
     const [ isFlipped, setFlipped ] = useState(false)

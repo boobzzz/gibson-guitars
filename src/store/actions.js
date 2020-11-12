@@ -17,3 +17,10 @@ export const removeAction = (item) => {
         payload: item
     }
 }
+
+export const addAction = (item) => {
+    return {
+        type: 'ADD_ITEM',
+        payload: item
+    }
+}

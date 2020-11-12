@@ -3,7 +3,7 @@ import { pinAction, removeAction } from '../../../store/actions';
 import { VscPin, VscPinned, VscTrash } from "react-icons/vsc";
 import { useItem } from './useItem';
 
-import classes from './ProductItem.module.css';
+import classes from './Item.module.css';
 
 const ProductItem = ({ data, setPinned, setRemove }) => {
     const { classInner, classBack, classOuter, showMore, toggleFlip, toggleShowMore } = useItem()

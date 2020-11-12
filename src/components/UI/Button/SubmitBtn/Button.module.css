@@ -1,0 +1,16 @@
+.Button button {
+    padding: 0.5em 2em;
+    font-size: 1em;
+    text-transform: uppercase;
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+    background: none;
+    color: var(--grey);
+    outline: none;
+    transition: all 0.3s ease;
+}
+.Button button:hover {
+    border: 1px solid var(--green);
+    background: var(--green);
+    color: white;
+}
