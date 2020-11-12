@@ -1,6 +1,8 @@
 const initialState = {
     products: [],
-    pinned: {}
+    pinned: {},
+    isLoading: true,
+    error: '',
 }
 
 export const productsReducer = (state = initialState, action) => {
@@ -12,7 +14,14 @@ export const productsReducer = (state = initialState, action) => {
                 ...state,
                 products: payload.map(item =>
                     ({...item, pinned: false})
-                )
+                ),
+                isLoading: false
+            }
+        case 'GET_PRODUCTS_ERROR':
+            return {
+                ...state,
+                error: payload,
+                isLoading: false
             }
         case 'PIN_ITEM':
             return {
@@ -27,7 +36,6 @@ export const productsReducer = (state = initialState, action) => {
                 )
             }
         case 'ADD_ITEM':
-            // console.log(payload)
             return {
                 ...state,
                 products: [...state.products, payload]

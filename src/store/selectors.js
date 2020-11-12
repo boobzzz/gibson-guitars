@@ -12,3 +12,6 @@ export const productsSelector = createSelector(getProducts, getPinned, (products
     
     return filtered
 })
+
+export const getIsLoading = (state) => state.products.isLoading
+export const getError = (state) => state.products.error

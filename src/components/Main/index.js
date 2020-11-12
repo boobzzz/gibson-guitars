@@ -1,27 +1,39 @@
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { productsAction } from '../../store/actions';
-import { productsSelector } from '../../store/selectors';
+import { fetchProducts } from '../../store/middleware';
+import { productsSelector, getIsLoading, getError } from '../../store/selectors';
 import ProductForm from '../Product/Form/index';
 import ProductItem from '../Product/Item/index';
 import { Button } from '../UI/Button/RegularBtn/Button';
 import { Overlay } from '../UI/Overlay/Overlay';
+import { Loader } from '../UI/Loader/Loader';
+import { NotFound } from '../UI/NotFound/NotFound';
 
 import classes from './Main.module.css';
 
 const Main = (props) => {
-    const { products, getProducts } = props
+    const { products, isLoading, error, getProducts } = props
     const [ isOpen, setIsOpen ] = useState(false)
-    
-    const closeOverlay = () => setIsOpen(false)
 
     useEffect(() => {
         getProducts('/products.json')
     }, [getProducts])
 
-    const addItem = () => {
-        setIsOpen(true)
+    const toggleOverlay = () => setIsOpen(!isOpen)
+
+    if (isLoading) {
+        return (
+            <Loader
+                height={70}
+                width={8}
+                radius={4}
+                margin={4}
+                color="#1ABC9C"
+                loading={isLoading} />
+        )
     }
+
+    if (error) return <NotFound />
 
     return (
         <main>
@@ -33,11 +45,11 @@ const Main = (props) => {
                                 <ProductItem key={product._id} data={product} />
                             )}
                         </div>
-                        <Button title="add item" clicked={addItem} />
+                        <Button title="add item" clicked={toggleOverlay} />
                     </div>
                     <Overlay
                         isOpen={isOpen}
-                        close={closeOverlay}
+                        close={toggleOverlay}
                         component={<ProductForm />} />
                 </section>
             </div>
@@ -48,12 +60,14 @@ const Main = (props) => {
 const mapStateToProps = (state) => {
     return {
         products: productsSelector(state),
+        isLoading: getIsLoading(state),
+        error: getError(state)
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getProducts: (url) => dispatch(productsAction(url)),
+        getProducts: (url) => dispatch(fetchProducts(url)),
     }
 }
 
