@@ -16,7 +16,7 @@ const Main = (props) => {
     const [ isOpen, setIsOpen ] = useState(false)
 
     useEffect(() => {
-        getProducts('/products.json')
+        getProducts('/product-list/products.json')
     }, [getProducts])
 
     const toggleOverlay = () => setIsOpen(!isOpen)
