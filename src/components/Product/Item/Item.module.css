@@ -104,3 +104,45 @@
     min-height: 300px;
     height: max-content;
 }
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .Inner {
+        height: 250px;
+    }
+    .Show {
+        min-height: 250px;
+    }
+}
+@media (max-width: 768px) {
+    .Front img {
+        left: 2em;
+    }
+    .Inner {
+        height: 240px;
+    }
+    .Show {
+        min-height: 240px;
+    }
+}
+@media (max-width: 576px) {
+    .Front img {
+        left: 2.5em;
+    }
+    .Inner {
+        height: 360px;
+    }
+    .Show {
+        min-height: 360px;
+    }
+}
+@media (max-width: 460px) {
+    .Front img {
+        left: 2em;
+    }
+    .Inner {
+        height: 260px;
+    }
+    .Show {
+        min-height: 260px;
+    }
+}

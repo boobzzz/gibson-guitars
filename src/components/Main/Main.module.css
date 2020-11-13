@@ -21,6 +21,17 @@ main {
 .List {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 2em;
+    column-gap: 1em;
     row-gap: 1em;
+}
+
+@media (max-width: 992px) {
+    .List {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 576px) {
+    .List {
+        grid-template-columns: 1fr;
+    }
 }

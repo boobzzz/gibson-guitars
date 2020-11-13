@@ -29,3 +29,14 @@ footer {
         width: 100%; height: 100%;
         object-fit: contain;
     }
+
+@media (max-width: 768px) {
+    .Brands {
+        gap: 2em;
+    }
+}
+@media (max-width: 576px) {
+    .Brands {
+        gap: 1em;
+    }
+}

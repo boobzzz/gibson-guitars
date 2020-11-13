@@ -48,3 +48,12 @@ header {
         font-size: 1.5em;
         color: rgba(96,118,154,0.5);
     }
+
+@media (max-width: 576px) {
+    .Logo img {
+        height: 4em;
+    }
+    .Search {
+        margin-right: 2em;
+    }
+}
