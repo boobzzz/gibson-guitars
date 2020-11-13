@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/product-list/static/css/main.06993934.chunk.css",
-    "main.js": "/product-list/static/js/main.0ed84fcb.chunk.js",
-    "main.js.map": "/product-list/static/js/main.0ed84fcb.chunk.js.map",
+    "main.css": "/product-list/static/css/main.1db7ad2f.chunk.css",
+    "main.js": "/product-list/static/js/main.22a76684.chunk.js",
+    "main.js.map": "/product-list/static/js/main.22a76684.chunk.js.map",
     "runtime-main.js": "/product-list/static/js/runtime-main.f052774e.js",
     "runtime-main.js.map": "/product-list/static/js/runtime-main.f052774e.js.map",
-    "static/js/2.365c0bbc.chunk.js": "/product-list/static/js/2.365c0bbc.chunk.js",
-    "static/js/2.365c0bbc.chunk.js.map": "/product-list/static/js/2.365c0bbc.chunk.js.map",
+    "static/js/2.da9b3ae0.chunk.js": "/product-list/static/js/2.da9b3ae0.chunk.js",
+    "static/js/2.da9b3ae0.chunk.js.map": "/product-list/static/js/2.da9b3ae0.chunk.js.map",
     "index.html": "/product-list/index.html",
-    "static/css/main.06993934.chunk.css.map": "/product-list/static/css/main.06993934.chunk.css.map",
-    "static/js/2.365c0bbc.chunk.js.LICENSE.txt": "/product-list/static/js/2.365c0bbc.chunk.js.LICENSE.txt",
+    "static/css/main.1db7ad2f.chunk.css.map": "/product-list/static/css/main.1db7ad2f.chunk.css.map",
+    "static/js/2.da9b3ae0.chunk.js.LICENSE.txt": "/product-list/static/js/2.da9b3ae0.chunk.js.LICENSE.txt",
     "static/media/NotFound.module.css": "/product-list/static/media/404.d8b13620.jpg",
     "static/media/epiphone-logo.ed0b9680.svg": "/product-list/static/media/epiphone-logo.ed0b9680.svg",
     "static/media/gibson-logo.0a513787.svg": "/product-list/static/media/gibson-logo.0a513787.svg",
@@ -18,8 +18,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.f052774e.js",
-    "static/js/2.365c0bbc.chunk.js",
-    "static/css/main.06993934.chunk.css",
-    "static/js/main.0ed84fcb.chunk.js"
+    "static/js/2.da9b3ae0.chunk.js",
+    "static/css/main.1db7ad2f.chunk.css",
+    "static/js/main.22a76684.chunk.js"
   ]
 }
