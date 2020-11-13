@@ -35,5 +35,5 @@
     }
     .Form form > div > div {
         font-size: 0.8em;
-        color: tomato;
+        color: var(--err);
     }

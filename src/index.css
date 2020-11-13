@@ -4,6 +4,7 @@ body {
     --grey: #60769a;
     --bg: #f2f2f2;
     --text: #212529;
+    --err: tomato;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;

@@ -1,16 +1,28 @@
+import { useState } from 'react';
 import { connect } from 'react-redux';
+import { isEmpty } from 'lodash';
+import { getPinned } from '../../../store/selectors';
 import { pinAction, removeAction } from '../../../store/actions';
 import { VscPin, VscPinned, VscTrash } from "react-icons/vsc";
 import { useItem } from './useItem';
 
 import classes from './Item.module.css';
 
-const ProductItem = ({ data, setPinned, setRemove }) => {
+const ProductItem = ({ data, pinnedItem, setItemPinned, setRemove }) => {
+    const [ isPinnedMsg, setIsPinnedMsg ] = useState(false)
     const { classInner, classBack, classOuter, showMore, toggleFlip, toggleShowMore } = useItem()
 
     const pinItem = (e, item) => {
         e.stopPropagation()
-        setPinned(item)
+        
+        if (item.pinned) setItemPinned(item)
+
+        if (!item.pinned && isEmpty(pinnedItem)) setItemPinned(item)
+        
+        if (!item.pinned && !isEmpty(pinnedItem)) {
+            setIsPinnedMsg(true)
+            setTimeout(() => setIsPinnedMsg(false), 2000)
+        }
     }
 
     const removeItem = (e, item) => {
@@ -20,6 +32,7 @@ const ProductItem = ({ data, setPinned, setRemove }) => {
 
     return (
         <div className={classOuter}>
+            {isPinnedMsg && <span>Only one pinned item allowed</span>}
             <div className={classInner} onClick={toggleFlip}>
                 <div className={classes.Front}>
                     <div>
@@ -54,11 +67,17 @@ const ProductItem = ({ data, setPinned, setRemove }) => {
     )
 }
 
+const mapStateToProps = (state) => {
+    return {
+        pinnedItem: getPinned(state)
+    }
+}
+
 const mapDispatchToProps = (dispatch) => {
     return {
-        setPinned: (item) => dispatch(pinAction(item)),
+        setItemPinned: (item) => dispatch(pinAction(item)),
         setRemove: (item) => dispatch(removeAction(item))
     }
 }
 
-export default connect(null, mapDispatchToProps)(ProductItem);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductItem);

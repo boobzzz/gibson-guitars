@@ -1,6 +1,6 @@
 const initialState = {
     products: [],
-    pinned: {},
+    pinnedItem: {},
     filter: '',
     isLoading: true,
     error: '',
@@ -27,7 +27,7 @@ export const productsReducer = (state = initialState, action) => {
         case 'PIN_ITEM':
             return {
                 ...state,
-                pinned: payload
+                pinnedItem: payload.pinned ? {} : payload
             }
         case 'REMOVE_ITEM':
             return {
