@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchProducts } from '../../store/middleware';
-import { productsSelector, getIsLoading, getError } from '../../store/selectors';
-import ProductForm from '../Product/Form/index';
-import ProductItem from '../Product/Item/index';
+import { productsSelector, getFilter, getIsLoading, getError } from '../../store/selectors';
+import ProductForm from '../Product/Form';
+import ProductItem from '../Product/Item';
 import { Button } from '../UI/Button/RegularBtn/Button';
 import { Overlay } from '../UI/Overlay/Overlay';
 import { Loader } from '../UI/Loader/Loader';
@@ -12,7 +12,7 @@ import { NotFound } from '../UI/NotFound/NotFound';
 import classes from './Main.module.css';
 
 const Main = (props) => {
-    const { products, isLoading, error, getProducts } = props
+    const { products, filter, isLoading, error, getProducts } = props
     const [ isOpen, setIsOpen ] = useState(false)
 
     useEffect(() => {
@@ -20,6 +20,10 @@ const Main = (props) => {
     }, [getProducts])
 
     const toggleOverlay = () => setIsOpen(!isOpen)
+
+    const filtered = products.filter(item =>
+        item.name.match(new RegExp(`^${filter}`, 'i'))
+    )
 
     if (isLoading) {
         return (
@@ -41,7 +45,7 @@ const Main = (props) => {
                 <section>
                     <div className={classes.ListContainer}>
                         <div className={classes.List}>
-                            {products.map(product =>
+                            {filtered.map(product =>
                                 <ProductItem key={product._id} data={product} />
                             )}
                         </div>
@@ -60,6 +64,7 @@ const Main = (props) => {
 const mapStateToProps = (state) => {
     return {
         products: productsSelector(state),
+        filter: getFilter(state),
         isLoading: getIsLoading(state),
         error: getError(state)
     }

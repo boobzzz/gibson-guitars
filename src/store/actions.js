@@ -1,20 +1,4 @@
-export const pinAction = (item) => {
-    return {
-        type: 'PIN_ITEM',
-        payload: item
-    }
-}
-
-export const removeAction = (item) => {
-    return {
-        type: 'REMOVE_ITEM',
-        payload: item
-    }
-}
-
-export const addAction = (item) => {
-    return {
-        type: 'ADD_ITEM',
-        payload: item
-    }
-}
+export const pinAction = (item) => ({ type: 'PIN_ITEM', payload: item })
+export const removeAction = (item) => ({ type: 'REMOVE_ITEM', payload: item})
+export const addAction = (item) => ({ type: 'ADD_ITEM', payload: item })
+export const searchAction = (value) => ({ type: 'SEARCH_ITEM', payload: value })

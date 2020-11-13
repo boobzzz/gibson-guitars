@@ -6,6 +6,7 @@
 }
     .Form h3 {
         font-size: 1.5em;
+        letter-spacing: -1px;
     }
     .Form form {
         display: flex;

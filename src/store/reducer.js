@@ -1,6 +1,7 @@
 const initialState = {
     products: [],
     pinned: {},
+    filter: '',
     isLoading: true,
     error: '',
 }
@@ -39,6 +40,11 @@ export const productsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 products: [...state.products, payload]
+            }
+        case 'SEARCH_ITEM':
+            return {
+                ...state,
+                filter: payload
             }
         default:
             return state

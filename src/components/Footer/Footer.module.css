@@ -1,0 +1,31 @@
+footer {
+    padding: 3em 1em;
+    letter-spacing: -1px;
+    background: var(--text);
+    color: var(--bg);
+}
+    footer h3 {
+        margin-bottom: 1em;
+        font-size: 1.5em;
+    }
+
+.Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+    
+.Brands {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 4em;
+    padding-top: 3em;
+    border-top: 1px solid var(--green);
+}
+    .Brands img {
+        width: 100%; height: 100%;
+        object-fit: contain;
+    }
