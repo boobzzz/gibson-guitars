@@ -1,4 +1,4 @@
-![Gibson](./public/images/snapshot.jpg)
+![Gibson](./public/snapshot.jpg)
 
 # Gibson guitars - product list
 
