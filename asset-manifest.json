@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/product-list/static/css/main.06993934.chunk.css",
+    "main.js": "/product-list/static/js/main.192b8cd8.chunk.js",
+    "main.js.map": "/product-list/static/js/main.192b8cd8.chunk.js.map",
+    "runtime-main.js": "/product-list/static/js/runtime-main.f052774e.js",
+    "runtime-main.js.map": "/product-list/static/js/runtime-main.f052774e.js.map",
+    "static/js/2.365c0bbc.chunk.js": "/product-list/static/js/2.365c0bbc.chunk.js",
+    "static/js/2.365c0bbc.chunk.js.map": "/product-list/static/js/2.365c0bbc.chunk.js.map",
+    "index.html": "/product-list/index.html",
+    "static/css/main.06993934.chunk.css.map": "/product-list/static/css/main.06993934.chunk.css.map",
+    "static/js/2.365c0bbc.chunk.js.LICENSE.txt": "/product-list/static/js/2.365c0bbc.chunk.js.LICENSE.txt",
+    "static/media/NotFound.module.css": "/product-list/static/media/404.d8b13620.jpg",
+    "static/media/epiphone-logo.ed0b9680.svg": "/product-list/static/media/epiphone-logo.ed0b9680.svg",
+    "static/media/gibson-logo.0a513787.svg": "/product-list/static/media/gibson-logo.0a513787.svg",
+    "static/media/kramer-logo.9ea378e3.svg": "/product-list/static/media/kramer-logo.9ea378e3.svg",
+    "static/media/steinberger-logo.b8e90390.svg": "/product-list/static/media/steinberger-logo.b8e90390.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f052774e.js",
+    "static/js/2.365c0bbc.chunk.js",
+    "static/css/main.06993934.chunk.css",
+    "static/js/main.192b8cd8.chunk.js"
+  ]
+}
