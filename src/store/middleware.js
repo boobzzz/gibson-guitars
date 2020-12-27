@@ -1,6 +1,6 @@
 import { fetchJSON } from '../utils/api/fetch';
 
-export const fetchProducts = (url, type) => async (dispatch) => {
+export const fetchProducts = (url) => async (dispatch) => {
     try {
         const resp = await fetchJSON(url)
         const data = resp.body

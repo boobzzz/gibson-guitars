@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchProducts } from '../../store/middleware';
 import { productsSelector, getFilter, getIsLoading, getError } from '../../store/selectors';
-import ProductForm from '../Product/Form';
-import ProductItem from '../Product/Item';
+
 import { Button } from '../UI/Button/RegularBtn/Button';
 import { Overlay } from '../UI/Overlay/Overlay';
 import { Loader } from '../UI/Loader/Loader';
 import { NotFound } from '../UI/NotFound/NotFound';
-
+import ProductForm from '../Product/Form';
+import ProductItem from '../Product/Item';
 import classes from './Main.module.css';
 
 const Main = (props) => {

@@ -4,7 +4,7 @@ main {
 }
 
 .Wrapper {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
     padding: 1em;
 }
@@ -21,8 +21,7 @@ main {
 .List {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 1em;
-    row-gap: 1em;
+    gap: 2em;
 }
 
 @media (max-width: 992px) {

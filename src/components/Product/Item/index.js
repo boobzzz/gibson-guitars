@@ -1,66 +1,64 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import { connect } from 'react-redux';
-import { isEmpty } from 'lodash';
+import { VscPin, VscPinned, VscTrash, VscFoldUp, VscFoldDown } from 'react-icons/vsc';
+
 import { getPinned } from '../../../store/selectors';
 import { pinAction, removeAction } from '../../../store/actions';
-import { VscPin, VscPinned, VscTrash } from "react-icons/vsc";
-import { useItem } from './useItem';
-
+import { useFlip } from './useFlip';
+import { useIcons } from './useIcons';
+import { use3D } from './use3D';
+import item_img from '../../../assets/images/prod_img_aj.png';
+import bg_img from '../../../assets/images/logo_bg.jpg';
 import classes from './Item.module.css';
 
 const ProductItem = ({ data, pinnedItem, setItemPinned, setRemove }) => {
-    const [ isPinnedMsg, setIsPinnedMsg ] = useState(false)
-    const { classInner, classBack, classOuter, showMore, toggleFlip, toggleShowMore } = useItem()
-
-    const pinItem = (e, item) => {
-        e.stopPropagation()
-        
-        if (item.pinned) setItemPinned(item)
-
-        if (!item.pinned && isEmpty(pinnedItem)) setItemPinned(item)
-        
-        if (!item.pinned && !isEmpty(pinnedItem)) {
-            setIsPinnedMsg(true)
-            setTimeout(() => setIsPinnedMsg(false), 2000)
-        }
-    }
-
-    const removeItem = (e, item) => {
-        e.stopPropagation()
-        setRemove(item)
-    }
+    const cartRef = useRef()
+    const { classCart, toggleFlip } = useFlip()
+    const { isPinnedMsg, pinItem, removeItem } = useIcons(data, pinnedItem, setItemPinned, setRemove, cartRef)
+    const { mouseMoveHandler, animateIn, animateOut } = use3D(cartRef)
 
     return (
-        <div className={classOuter}>
-            {isPinnedMsg && <span>Only one pinned item allowed</span>}
-            <div className={classInner} onClick={toggleFlip}>
-                <div className={classes.Front}>
-                    <div>
-                        <img src={data.img} alt=""/>
-                    </div>
-                    <div>
-                        <div className={classes.FrontHeader}>
-                            <h4>{data.name}</h4>
+        <div
+            className={classes.Wrapper}
+            onMouseMove={mouseMoveHandler}
+            onMouseEnter={animateIn}
+            onMouseLeave={animateOut}>
+            <div className={classes.Container} ref={cartRef}>
+                {isPinnedMsg && <span>Only one pinned item allowed</span>}
+                <div className={classCart} onClick={toggleFlip}>
+                    <div className={classes.Front}>
+                        <div className={classes.Header}>
+                            <h3>{data.name}</h3>
                             <div className={classes.Icons}>
                                 {!data.pinned
-                                ? <span onClick={(e) => pinItem(e, data)}><VscPin /></span>
-                                : <span onClick={(e) => pinItem(e, data)}><VscPinned /></span>}
-                                <span onClick={(e) => removeItem(e, data)}><VscTrash /></span>
+                                ? <span onClick={pinItem}><VscPin /></span>
+                                : <span onClick={pinItem}><VscPinned /></span>}
+                                <span onClick={removeItem}><VscTrash /></span>
                             </div>
                         </div>
-                        <span>{`$ ${data.price}`}</span>
+                        <div  className={classes.Img}>
+                            <img src={item_img} alt=""/>
+                        </div>
+                        <div className={classes.BgImg}>
+                            <img src={bg_img} alt=""/>
+                        </div>
+                        <div className={classes.Price}>
+                            <span>{`$ ${data.price}`}</span>
+                        </div>
                     </div>
-                </div>
-                <div className={classBack}>
+                    <div className={classes.Back}>
                     <div className={classes.BackHeader}>
                         <h4>Model overview:</h4>
                     </div>
                     <div className={classes.BackDesc}>
                         <p>{data.desc}</p>
                     </div>
-                    <button onClick={toggleShowMore}>
-                        {!showMore ? '...show more' : '...show less'}
-                    </button>
+                    <div className={classes.BackScroll}>
+                        <span className={classes.Arrow}><VscFoldUp /></span>
+                        <span className={classes.Text}>scroll</span>
+                        <span className={classes.Arrow}><VscFoldDown /></span>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
