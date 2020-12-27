@@ -1,25 +1,27 @@
 {
   "files": {
-    "main.css": "/product-list/static/css/main.1db7ad2f.chunk.css",
-    "main.js": "/product-list/static/js/main.22a76684.chunk.js",
-    "main.js.map": "/product-list/static/js/main.22a76684.chunk.js.map",
-    "runtime-main.js": "/product-list/static/js/runtime-main.f052774e.js",
-    "runtime-main.js.map": "/product-list/static/js/runtime-main.f052774e.js.map",
-    "static/js/2.da9b3ae0.chunk.js": "/product-list/static/js/2.da9b3ae0.chunk.js",
-    "static/js/2.da9b3ae0.chunk.js.map": "/product-list/static/js/2.da9b3ae0.chunk.js.map",
-    "index.html": "/product-list/index.html",
-    "static/css/main.1db7ad2f.chunk.css.map": "/product-list/static/css/main.1db7ad2f.chunk.css.map",
-    "static/js/2.da9b3ae0.chunk.js.LICENSE.txt": "/product-list/static/js/2.da9b3ae0.chunk.js.LICENSE.txt",
-    "static/media/NotFound.module.css": "/product-list/static/media/404.d8b13620.jpg",
-    "static/media/epiphone-logo.ed0b9680.svg": "/product-list/static/media/epiphone-logo.ed0b9680.svg",
-    "static/media/gibson-logo.0a513787.svg": "/product-list/static/media/gibson-logo.0a513787.svg",
-    "static/media/kramer-logo.9ea378e3.svg": "/product-list/static/media/kramer-logo.9ea378e3.svg",
-    "static/media/steinberger-logo.b8e90390.svg": "/product-list/static/media/steinberger-logo.b8e90390.svg"
+    "main.css": "/gibson-guitars/static/css/main.463b8da8.chunk.css",
+    "main.js": "/gibson-guitars/static/js/main.4e9b772a.chunk.js",
+    "main.js.map": "/gibson-guitars/static/js/main.4e9b772a.chunk.js.map",
+    "runtime-main.js": "/gibson-guitars/static/js/runtime-main.c0acc05d.js",
+    "runtime-main.js.map": "/gibson-guitars/static/js/runtime-main.c0acc05d.js.map",
+    "static/js/2.46def377.chunk.js": "/gibson-guitars/static/js/2.46def377.chunk.js",
+    "static/js/2.46def377.chunk.js.map": "/gibson-guitars/static/js/2.46def377.chunk.js.map",
+    "index.html": "/gibson-guitars/index.html",
+    "static/css/main.463b8da8.chunk.css.map": "/gibson-guitars/static/css/main.463b8da8.chunk.css.map",
+    "static/js/2.46def377.chunk.js.LICENSE.txt": "/gibson-guitars/static/js/2.46def377.chunk.js.LICENSE.txt",
+    "static/media/NotFound.module.css": "/gibson-guitars/static/media/404.d8b13620.jpg",
+    "static/media/epiphone-logo.ed0b9680.svg": "/gibson-guitars/static/media/epiphone-logo.ed0b9680.svg",
+    "static/media/gibson-logo.0a513787.svg": "/gibson-guitars/static/media/gibson-logo.0a513787.svg",
+    "static/media/kramer-logo.9ea378e3.svg": "/gibson-guitars/static/media/kramer-logo.9ea378e3.svg",
+    "static/media/logo_bg.a0757758.jpg": "/gibson-guitars/static/media/logo_bg.a0757758.jpg",
+    "static/media/prod_img_aj.d43fa406.png": "/gibson-guitars/static/media/prod_img_aj.d43fa406.png",
+    "static/media/steinberger-logo.b8e90390.svg": "/gibson-guitars/static/media/steinberger-logo.b8e90390.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f052774e.js",
-    "static/js/2.da9b3ae0.chunk.js",
-    "static/css/main.1db7ad2f.chunk.css",
-    "static/js/main.22a76684.chunk.js"
+    "static/js/runtime-main.c0acc05d.js",
+    "static/js/2.46def377.chunk.js",
+    "static/css/main.463b8da8.chunk.css",
+    "static/js/main.4e9b772a.chunk.js"
   ]
 }
