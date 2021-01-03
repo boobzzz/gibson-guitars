@@ -1,27 +1,26 @@
 {
   "files": {
-    "main.css": "/gibson-guitars/static/css/main.463b8da8.chunk.css",
-    "main.js": "/gibson-guitars/static/js/main.4e9b772a.chunk.js",
-    "main.js.map": "/gibson-guitars/static/js/main.4e9b772a.chunk.js.map",
+    "main.css": "/gibson-guitars/static/css/main.658a798e.chunk.css",
+    "main.js": "/gibson-guitars/static/js/main.aa580b7f.chunk.js",
+    "main.js.map": "/gibson-guitars/static/js/main.aa580b7f.chunk.js.map",
     "runtime-main.js": "/gibson-guitars/static/js/runtime-main.c0acc05d.js",
     "runtime-main.js.map": "/gibson-guitars/static/js/runtime-main.c0acc05d.js.map",
-    "static/js/2.46def377.chunk.js": "/gibson-guitars/static/js/2.46def377.chunk.js",
-    "static/js/2.46def377.chunk.js.map": "/gibson-guitars/static/js/2.46def377.chunk.js.map",
+    "static/js/2.671159bb.chunk.js": "/gibson-guitars/static/js/2.671159bb.chunk.js",
+    "static/js/2.671159bb.chunk.js.map": "/gibson-guitars/static/js/2.671159bb.chunk.js.map",
     "index.html": "/gibson-guitars/index.html",
-    "static/css/main.463b8da8.chunk.css.map": "/gibson-guitars/static/css/main.463b8da8.chunk.css.map",
-    "static/js/2.46def377.chunk.js.LICENSE.txt": "/gibson-guitars/static/js/2.46def377.chunk.js.LICENSE.txt",
+    "static/css/main.658a798e.chunk.css.map": "/gibson-guitars/static/css/main.658a798e.chunk.css.map",
+    "static/js/2.671159bb.chunk.js.LICENSE.txt": "/gibson-guitars/static/js/2.671159bb.chunk.js.LICENSE.txt",
     "static/media/NotFound.module.css": "/gibson-guitars/static/media/404.d8b13620.jpg",
     "static/media/epiphone-logo.ed0b9680.svg": "/gibson-guitars/static/media/epiphone-logo.ed0b9680.svg",
     "static/media/gibson-logo.0a513787.svg": "/gibson-guitars/static/media/gibson-logo.0a513787.svg",
     "static/media/kramer-logo.9ea378e3.svg": "/gibson-guitars/static/media/kramer-logo.9ea378e3.svg",
     "static/media/logo_bg.a0757758.jpg": "/gibson-guitars/static/media/logo_bg.a0757758.jpg",
-    "static/media/prod_img_aj.d43fa406.png": "/gibson-guitars/static/media/prod_img_aj.d43fa406.png",
     "static/media/steinberger-logo.b8e90390.svg": "/gibson-guitars/static/media/steinberger-logo.b8e90390.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.c0acc05d.js",
-    "static/js/2.46def377.chunk.js",
-    "static/css/main.463b8da8.chunk.css",
-    "static/js/main.4e9b772a.chunk.js"
+    "static/js/2.671159bb.chunk.js",
+    "static/css/main.658a798e.chunk.css",
+    "static/js/main.aa580b7f.chunk.js"
   ]
 }
