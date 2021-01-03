@@ -1,45 +1,45 @@
 const initialState = {
-    products: [],
-    pinnedItem: {},
-    filter: '',
     isLoading: true,
+    isDisabled: false,
     error: '',
+    products: [],
+    imgUrl: '',
+    pinnedItem: {},
+    filter: ''
 }
 
 export const productsReducer = (state = initialState, action) => {
     const { type, payload } = action
 
     switch (type) {
+        case 'SET_DISABLED':
+            return {
+                ...state,
+                isDisabled: payload
+            }
+        case 'GET_URL':
+            return {
+                ...state,
+                isDisabled: false,
+                imgUrl: payload
+            }
         case 'GET_PRODUCTS':
             return {
                 ...state,
-                products: payload.map(item =>
-                    ({...item, pinned: false})
-                ),
-                isLoading: false
+                isLoading: false,
+                products: payload.map(item => ({...item, pinned: false})),
+                imgUrl: ''
             }
-        case 'GET_PRODUCTS_ERROR':
+        case 'ERROR':
             return {
                 ...state,
-                error: payload,
-                isLoading: false
+                isLoading: false,
+                error: payload
             }
         case 'PIN_ITEM':
             return {
                 ...state,
                 pinnedItem: payload.pinned ? {} : payload
-            }
-        case 'REMOVE_ITEM':
-            return {
-                ...state,
-                products: state.products.filter(item =>
-                    item !== payload
-                )
-            }
-        case 'ADD_ITEM':
-            return {
-                ...state,
-                products: [...state.products, payload]
             }
         case 'SEARCH_ITEM':
             return {

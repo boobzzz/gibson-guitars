@@ -37,3 +37,9 @@
         font-size: 0.8em;
         color: var(--err);
     }
+    .Form button > div {
+        height: 100%;
+    }
+    .Form button > div > div {
+        height: 18px;
+    }

@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchProducts } from '../../store/middleware';
-import { productsSelector, getFilter, getIsLoading, getError } from '../../store/selectors';
 
+import { getAction } from '../../store/actions';
+import { productsSelector, getFilter, getIsLoading, getError } from '../../store/selectors';
+import { useFirestore } from './useFirestore';
 import { Button } from '../UI/Button/RegularBtn/Button';
 import { Overlay } from '../UI/Overlay/Overlay';
 import { Loader } from '../UI/Loader/Loader';
@@ -12,12 +13,13 @@ import ProductItem from '../Product/Item';
 import classes from './Main.module.css';
 
 const Main = (props) => {
-    const { products, filter, isLoading, error, getProducts } = props
+    const { isLoading, error, products, filter, getProducts } = props
     const [ isOpen, setIsOpen ] = useState(false)
-
+    const { data, fetchError } = useFirestore('products')
+    
     useEffect(() => {
-        getProducts('/product-list/products.json')
-    }, [getProducts])
+        getProducts(data)
+    }, [getProducts, data])
 
     const toggleOverlay = () => setIsOpen(!isOpen)
 
@@ -37,18 +39,20 @@ const Main = (props) => {
         )
     }
 
-    if (error) return <NotFound />
+    if (error || fetchError) return <NotFound />
 
     return (
         <main>
             <div className={classes.Wrapper}>
                 <section>
                     <div className={classes.ListContainer}>
-                        <div className={classes.List}>
+                        <ul className={classes.List}>
                             {filtered.map(product =>
-                                <ProductItem key={product._id} data={product} />
+                                <li key={product.id}>
+                                    <ProductItem data={product} />
+                                </li>
                             )}
-                        </div>
+                        </ul>
                         <Button title="add item" clicked={toggleOverlay} />
                     </div>
                     <Overlay
@@ -63,16 +67,16 @@ const Main = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        products: productsSelector(state),
-        filter: getFilter(state),
         isLoading: getIsLoading(state),
-        error: getError(state)
+        error: getError(state),
+        products: productsSelector(state),
+        filter: getFilter(state)
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getProducts: (url) => dispatch(fetchProducts(url)),
+        getProducts: (data) => dispatch(getAction(data))
     }
 }
 

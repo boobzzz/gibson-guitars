@@ -14,7 +14,7 @@ const Footer = () => {
                 <h3>Visit The Gibson Brands Family</h3>
                 <div className={classes.Brands}>
                     {brands.map(brand =>
-                        <a href="#/">
+                        <a href="#/" key={brand}>
                             <img src={brand} alt=""/>
                         </a>
                     )}

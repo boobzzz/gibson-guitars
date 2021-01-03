@@ -2,39 +2,54 @@ import { connect } from 'react-redux';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
-import { addAction } from '../../../store/actions';
+
 import { FieldText } from '../../UI/Field/Text/FieldText';
 import { FieldTextArea } from '../../UI/Field/TextArea/FieldTextArea';
+import { FieldFile } from '../../UI/Field/File/FieldFile';
 import { Button } from '../../UI/Button/SubmitBtn/Button';
-
+import { Loader } from '../../UI/Loader/Loader';
+import { getImgUrl, getIsDisabled } from '../../../store/selectors';
+import { disableAction, uploadAction, submitAction } from '../../../store/actions';
+import { timestamp } from '../../../config/firebaseConfig';
 import classes from './Form.module.css';
 
 const initialValues = {
-    img: '',
     name: '',
     desc: '',
-    price: ''
+    price: 0,
+    img: ''
 }
 const validationSchema = Yup.object({
-    img: Yup.string().required('Enter item image url'),
     name: Yup.string().required('Enter item title'),
     desc: Yup.string().required('Enter item description'),
-    price: Yup.string().required('Enter item price')
+    price: Yup.number().required('Enter item price'),
+    img: Yup.mixed().required('Choose file image to upload')
 })
 
-const ProductForm = ({ addItem }) => {
+const ProductForm = ({ isDisabled, imgUrl, setDisabled, uploadFile, storeProduct }) => {
+    const btn = isDisabled
+                ? <Loader
+                    height={16}
+                    width={2}
+                    radius={1}
+                    margin={1}
+                    color="#1ABC9C"
+                    loading={isDisabled} />
+                : 'add item'
+        
     const handleSubmit = (values, { resetForm }) => {
-        const { img, name, desc, price } = values
+        const { name, desc, price } = values
+
         const itemData = {
-            _id: nanoid(24),
-            img: img,
+            id: nanoid(24),
             name: name,
             desc: desc,
-            price: price
+            price: price,
+            img: imgUrl,
+            createdAt: timestamp()
         }
-        console.log('form');
 
-        addItem(itemData)
+        storeProduct(itemData)
         resetForm({ values: '' })
     }
 
@@ -48,11 +63,11 @@ const ProductForm = ({ addItem }) => {
                 {() => {
                     return (
                         <Form>
-                            <FieldText id="img" type="text" label="Item image URL *" />
                             <FieldText id="name" type="text" label="Item title *" />
                             <FieldTextArea id="desc" type="text" label="Item description *" />
                             <FieldText id="price" type="text" label="Item price *" />
-                            <Button title="add item" />
+                            <FieldFile id="img" label="Choose image *" uploader={uploadFile} disabled={setDisabled} />
+                            <Button title={btn} disabled={isDisabled} />
                         </Form>
                     )
                 }}
@@ -61,10 +76,19 @@ const ProductForm = ({ addItem }) => {
     )
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
     return {
-        addItem: (data) => dispatch(addAction(data))
+        isDisabled: getIsDisabled(state),
+        imgUrl: getImgUrl(state)
     }
 }
 
-export default connect(null, mapDispatchToProps)(ProductForm);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setDisabled: (value) => dispatch(disableAction(value)),
+        uploadFile: (file) => dispatch(uploadAction(file)),
+        storeProduct: (data) => dispatch(submitAction(data))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductForm);

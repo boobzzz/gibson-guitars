@@ -13,7 +13,7 @@ main {
     display: flex;
     flex-direction: column;
 }
-    .ListContainer > div + div {
+    .ListContainer > div {
         align-self: center;
         margin-top: 4em;
     }

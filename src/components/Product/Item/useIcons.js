@@ -1,32 +1,36 @@
 import { useState } from 'react';
 import { isEmpty } from 'lodash';
 
-export const useIcons = (item, pinnedItem, setItemPinned, setRemove, ref) => {
+export const useIcons = (item, pinnedItem, pinItem, removeItem, ref) => {
     const [ isPinnedMsg, setIsPinnedMsg ] = useState(false)
 
-    const pinItem = (e) => {
+    const reset3D = () => {
+        ref.current.style.transform = 'rotateX(0deg) rotateY(0deg)'
+        ref.current.children[0].children[0].children[1].children[0].style.transform = 'translateZ(0px)'
+        ref.current.children[0].children[0].children[1].children[1].style.transform = 'translateZ(0px)'
+        ref.current.children[0].children[0].children[1].children[2].style.transform = 'translateZ(0px)'
+    }
+
+    const pinHandler = (e) => {
         e.stopPropagation()
         
-        if (item.pinned) setItemPinned(item)
+        if (item.pinned) pinItem(item)
 
-        if (!item.pinned && isEmpty(pinnedItem)) setItemPinned(item)
+        if (!item.pinned && isEmpty(pinnedItem)) pinItem(item)
         
         if (!item.pinned && !isEmpty(pinnedItem)) {
             setIsPinnedMsg(true)
             setTimeout(() => setIsPinnedMsg(false), 3000)
         }
 
-        ref.current.style.transform = 'rotateX(0deg) rotateY(0deg)'
-        ref.current.children[0].children[0].children[0].style.transform = 'translateZ(0px)'
-        ref.current.children[0].children[0].children[1].style.transform = 'translateZ(0px)'
-        ref.current.children[0].children[0].children[3].style.transform = 'translateZ(0px)'
+        reset3D()
     }
 
-    const removeItem = (e) => {
+    const removeHandler = (e) => {
         e.stopPropagation()
 
-        setRemove(item)
+        removeItem(item)
     }
 
-    return { isPinnedMsg, pinItem, removeItem }
+    return { isPinnedMsg, pinHandler, removeHandler }
 }
