@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/gibson-guitars/static/css/main.658a798e.chunk.css",
-    "main.js": "/gibson-guitars/static/js/main.78d41fbf.chunk.js",
-    "main.js.map": "/gibson-guitars/static/js/main.78d41fbf.chunk.js.map",
+    "main.css": "/gibson-guitars/static/css/main.f54f773a.chunk.css",
+    "main.js": "/gibson-guitars/static/js/main.0bc6c361.chunk.js",
+    "main.js.map": "/gibson-guitars/static/js/main.0bc6c361.chunk.js.map",
     "runtime-main.js": "/gibson-guitars/static/js/runtime-main.c0acc05d.js",
     "runtime-main.js.map": "/gibson-guitars/static/js/runtime-main.c0acc05d.js.map",
     "static/js/2.671159bb.chunk.js": "/gibson-guitars/static/js/2.671159bb.chunk.js",
     "static/js/2.671159bb.chunk.js.map": "/gibson-guitars/static/js/2.671159bb.chunk.js.map",
     "index.html": "/gibson-guitars/index.html",
-    "static/css/main.658a798e.chunk.css.map": "/gibson-guitars/static/css/main.658a798e.chunk.css.map",
+    "static/css/main.f54f773a.chunk.css.map": "/gibson-guitars/static/css/main.f54f773a.chunk.css.map",
     "static/js/2.671159bb.chunk.js.LICENSE.txt": "/gibson-guitars/static/js/2.671159bb.chunk.js.LICENSE.txt",
     "static/media/NotFound.module.css": "/gibson-guitars/static/media/404.d8b13620.jpg",
     "static/media/epiphone-logo.ed0b9680.svg": "/gibson-guitars/static/media/epiphone-logo.ed0b9680.svg",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.c0acc05d.js",
     "static/js/2.671159bb.chunk.js",
-    "static/css/main.658a798e.chunk.css",
-    "static/js/main.78d41fbf.chunk.js"
+    "static/css/main.f54f773a.chunk.css",
+    "static/js/main.0bc6c361.chunk.js"
   ]
 }
