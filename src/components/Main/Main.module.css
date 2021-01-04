@@ -24,12 +24,23 @@ main {
     gap: 2em;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1300px) {
     .List {
-        grid-template-columns: 1fr 1fr;
+        gap: 1em;
     }
 }
-@media (max-width: 576px) {
+@media (max-width: 1200px) {
+    .List {
+        grid-template-columns: 1fr 1fr;
+        gap: 3em;
+    }
+}
+@media (max-width: 992px) {
+    .List {
+        gap: 1em;
+    }
+}
+@media (max-width: 768px) {
     .List {
         grid-template-columns: 1fr;
     }

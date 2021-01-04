@@ -148,12 +148,3 @@
     min-height: 300px;
     height: max-content;
 }
-
-@media (max-width: 1200px) {
-    .Inner {
-        height: 250px;
-    }
-    .Show {
-        min-height: 250px;
-    }
-}
