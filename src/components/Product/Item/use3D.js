@@ -11,11 +11,11 @@ export const use3D = (ref) => {
 
     const animateIn = () => {
         ref.current.style.transition = 'none'
-        ref.current.children[0].children[0].children[1].children[0].style.transform = 'translateZ(130px)'
-        ref.current.children[0].children[0].children[1].children[1].style.transform = 'translateZ(100px) rotateZ(-25deg)'
-        ref.current.children[0].children[0].children[1].children[2].style.transform = 'translateZ(100px)'
-        ref.current.children[0].children[1].children[0].style.transform = 'translateZ(100px)'
-        ref.current.children[0].children[1].children[1].style.transform = 'translateZ(130px)'
+        ref.current.children[0].children[0].children[1].children[0].style.transform = 'translateZ(120px)'
+        ref.current.children[0].children[0].children[1].children[1].style.transform = 'translateZ(150px) rotateZ(-25deg)'
+        ref.current.children[0].children[0].children[1].children[2].style.transform = 'translateZ(120px)'
+        ref.current.children[0].children[1].children[0].style.transform = 'translateZ(120px)'
+        ref.current.children[0].children[1].children[1].style.transform = 'translateZ(150px)'
     }
 
     const animateOut = () => {
