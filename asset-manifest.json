@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/gibson-guitars/static/css/main.658a798e.chunk.css",
-    "main.js": "/gibson-guitars/static/js/main.aa580b7f.chunk.js",
-    "main.js.map": "/gibson-guitars/static/js/main.aa580b7f.chunk.js.map",
+    "main.js": "/gibson-guitars/static/js/main.78d41fbf.chunk.js",
+    "main.js.map": "/gibson-guitars/static/js/main.78d41fbf.chunk.js.map",
     "runtime-main.js": "/gibson-guitars/static/js/runtime-main.c0acc05d.js",
     "runtime-main.js.map": "/gibson-guitars/static/js/runtime-main.c0acc05d.js.map",
     "static/js/2.671159bb.chunk.js": "/gibson-guitars/static/js/2.671159bb.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.c0acc05d.js",
     "static/js/2.671159bb.chunk.js",
     "static/css/main.658a798e.chunk.css",
-    "static/js/main.aa580b7f.chunk.js"
+    "static/js/main.78d41fbf.chunk.js"
   ]
 }
